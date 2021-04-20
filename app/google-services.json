@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "33984216566",
+    "project_id": "popitup-50aef",
+    "storage_bucket": "popitup-50aef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33984216566:android:f454fec963044558e09bd7",
+        "android_client_info": {
+          "package_name": "com.example.popitup_anaugmentedrealitygame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "33984216566-qlmmnhc9ciquqjrtb44ohile6mmp9q62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpn2uxaMp5tlyuM08_LnTfnqLK5yth5gQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "33984216566-qlmmnhc9ciquqjrtb44ohile6mmp9q62.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
