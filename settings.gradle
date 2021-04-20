@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "PopItUp - An Augmented Reality Game"
