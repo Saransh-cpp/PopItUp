@@ -63,7 +63,7 @@
     file: 'sampledata/balloon.fbx',
     name: 'balloon',
     recenter: 'root',
-    scale: 0.52396500000000001,
+    scale: 0.32396500000000001,
   },
   version: '0.54:2',
 }
