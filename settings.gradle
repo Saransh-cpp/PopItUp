@@ -1,2 +1,4 @@
 include ':app'
+include ':sceneformux'
+project(':sceneformux').projectDir=new File('sceneformux/ux')
 rootProject.name = "PopItUp - An Augmented Reality Game"

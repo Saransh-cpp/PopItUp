@@ -1,5 +1,6 @@
 package com.example.popitup_anaugmentedrealitygame
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -42,8 +43,9 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        homeText.setOnClickListener {
-            Toast.makeText(context, "Clicked", Toast.LENGTH_LONG).show()
+        arButton.setOnClickListener {
+            val intent = Intent(this.activity, BaseAR::class.java)
+            startActivity(intent)
         }
     }
 
