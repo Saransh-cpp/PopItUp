@@ -34,7 +34,7 @@ class UserDao {
             val currentUserId = auth.currentUser!!.uid
             val user = getUserById(currentUserId).await().toObject(User::class.java)!!
 
-            if (highScore > user.highScore) {
+            if (highScore < user.highScore) {
                 user.highScore = highScore
             }
             usersCollection.document(currentUserId).set(user)
