@@ -1,6 +1,7 @@
 package com.example.popitup_anaugmentedrealitygame
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.ar.sceneform.Camera
@@ -17,6 +18,8 @@ import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.net.Uri;
 import android.view.Display
+import com.google.ar.core.Anchor
+import com.google.ar.sceneform.AnchorNode
 import kotlinx.android.synthetic.main.activity_base_a_r.*
 import java.util.*
 
@@ -28,7 +31,6 @@ class BaseAR : AppCompatActivity() {
     private var shouldStartTimer: Boolean = true
     private var balloonsLeft: Int = 20
     private lateinit var point: Point
-//    private lateinit var soundPool: SoundPool
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,14 +41,49 @@ class BaseAR : AppCompatActivity() {
 
         setContentView(R.layout.activity_base_a_r)
 
-//        loadSoundPool()
-
         val arFragment: BaseARFrag = supportFragmentManager.findFragmentById(R.id.arFragment) as BaseARFrag
 
         scene = arFragment.arSceneView.scene
         camera = scene.camera
 
-        addBalloonsToScene()
+//        addBalloonsToScene()
+//        arFragment.setOnTapArPlaneListener { hitResult, plane, motionEvent ->
+//            val anchor: Anchor = hitResult.createAnchor()
+
+            val color: com.google.ar.sceneform.rendering.Color = com.google.ar.sceneform.rendering.Color()
+
+            MaterialFactory.makeOpaqueWithColor(this, color).thenAccept {
+                for (i in 0 until 20) {
+
+                    val random: Random = Random()
+                    val x: Int = random.nextInt(10)
+                    var z: Int = random.nextInt(10)
+                    val y: Int = random.nextInt(20)
+
+                    z = -z
+
+                    val centre: Vector3 = Vector3(x.toFloat(), y/10f, z.toFloat())
+
+                    val renderable: ModelRenderable = ShapeFactory.makeSphere(0.1f, centre, it)
+//
+////                    val anchorNode: AnchorNode = AnchorNode(anchor)
+////                    anchorNode.renderable = renderabe
+////                    arFragment.arSceneView.scene.addChild(anchorNode)
+                    val node: Node = Node()
+                    node.renderable = renderable
+                    scene.addChild(node)
+
+
+
+//                    node.worldPosition.set(x.toFloat(), (y / 10f).toFloat(), z.toFloat())
+//                }
+////                val renderabe: ModelRenderable = ShapeFactory.makeSphere(0.1f, centre, it)
+////
+////                val anchorNode: AnchorNode = AnchorNode(anchor)
+////                anchorNode.renderable = renderabe
+////                arFragment.arSceneView.scene.addChild(anchorNode)
+            }
+        }
         buildBulletModel()
         shootButton.setOnClickListener {
             if (shouldStartTimer) {
@@ -56,10 +93,6 @@ class BaseAR : AppCompatActivity() {
             shoot()
         }
     }
-
-//    private fun loadSoundPool() {
-//        val audioAttributes: AudioAttributes = AudioAttributes()
-//    }
 
     private fun shoot() {
         val ray: Ray = camera.screenPointToRay(point.x / 2f, point.y / 2f)
@@ -122,14 +155,14 @@ class BaseAR : AppCompatActivity() {
     }
 
     private fun addBalloonsToScene() {
+
         ModelRenderable
             .builder()
-            .setSource(this, Uri.parse("balloons.sfb"))
             .build()
             .thenAccept {
                 for (i in 0 until 20) {
                     val node: Node = Node()
-                    node.renderable
+                    node.renderable = it
                     scene.addChild(node)
 
                     val random: Random = Random()
