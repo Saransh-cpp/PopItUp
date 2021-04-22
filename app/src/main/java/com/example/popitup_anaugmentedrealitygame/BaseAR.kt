@@ -46,45 +46,10 @@ class BaseAR : AppCompatActivity() {
         scene = arFragment.arSceneView.scene
         camera = scene.camera
 
-//        addBalloonsToScene()
-//        arFragment.setOnTapArPlaneListener { hitResult, plane, motionEvent ->
-//            val anchor: Anchor = hitResult.createAnchor()
+        addBalloonsToScene()
 
-            val color: com.google.ar.sceneform.rendering.Color = com.google.ar.sceneform.rendering.Color()
-
-            MaterialFactory.makeOpaqueWithColor(this, color).thenAccept {
-                for (i in 0 until 20) {
-
-                    val random: Random = Random()
-                    val x: Int = random.nextInt(10)
-                    var z: Int = random.nextInt(10)
-                    val y: Int = random.nextInt(20)
-
-                    z = -z
-
-                    val centre: Vector3 = Vector3(x.toFloat(), y/10f, z.toFloat())
-
-                    val renderable: ModelRenderable = ShapeFactory.makeSphere(0.1f, centre, it)
-//
-////                    val anchorNode: AnchorNode = AnchorNode(anchor)
-////                    anchorNode.renderable = renderabe
-////                    arFragment.arSceneView.scene.addChild(anchorNode)
-                    val node: Node = Node()
-                    node.renderable = renderable
-                    scene.addChild(node)
-
-
-
-//                    node.worldPosition.set(x.toFloat(), (y / 10f).toFloat(), z.toFloat())
-//                }
-////                val renderabe: ModelRenderable = ShapeFactory.makeSphere(0.1f, centre, it)
-////
-////                val anchorNode: AnchorNode = AnchorNode(anchor)
-////                anchorNode.renderable = renderabe
-////                arFragment.arSceneView.scene.addChild(anchorNode)
-            }
-        }
         buildBulletModel()
+
         shootButton.setOnClickListener {
             if (shouldStartTimer) {
                 startTimer()
@@ -156,24 +121,27 @@ class BaseAR : AppCompatActivity() {
 
     private fun addBalloonsToScene() {
 
-        ModelRenderable
-            .builder()
-            .build()
-            .thenAccept {
-                for (i in 0 until 20) {
-                    val node: Node = Node()
-                    node.renderable = it
-                    scene.addChild(node)
+        val color: com.google.ar.sceneform.rendering.Color = com.google.ar.sceneform.rendering.Color()
 
-                    val random: Random = Random()
-                    val x: Int = random.nextInt(10)
-                    var z: Int = random.nextInt(10)
-                    val y: Int = random.nextInt(20)
+        MaterialFactory.makeOpaqueWithColor(this, color).thenAccept {
+            for (i in 0 until 20) {
 
-                    z = -z
+                val random: Random = Random()
+                val x: Int = random.nextInt(10)
+                var z: Int = random.nextInt(10)
+                val y: Int = random.nextInt(20)
 
-                    node.worldPosition.set(x.toFloat(), (y / 10f).toFloat(), z.toFloat())
-                }
+                z = -z
+
+                val centre: Vector3 = Vector3(x.toFloat(), y/10f, z.toFloat())
+
+                val renderable: ModelRenderable = ShapeFactory.makeSphere(0.1f, centre, it)
+
+                val node: Node = Node()
+                node.renderable = renderable
+                scene.addChild(node)
+
             }
+        }
     }
 }
