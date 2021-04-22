@@ -38,6 +38,10 @@ class BaseAR : AppCompatActivity() {
 
         val arFragment: BaseARFrag = supportFragmentManager.findFragmentById(R.id.arFragment) as BaseARFrag
 
+        arFragment.planeDiscoveryController.hide();
+        arFragment.planeDiscoveryController.setInstructionView(null);
+        arFragment.arSceneView.planeRenderer.isEnabled = false;
+
         scene = arFragment.arSceneView.scene
         camera = scene.camera
 
