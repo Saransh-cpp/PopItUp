@@ -12,9 +12,6 @@ class BaseARFrag : ArFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val frameLayout = super.onCreateView(inflater, container, savedInstanceState)
-        planeDiscoveryController.hide()
-        planeDiscoveryController.setInstructionView(null)
-        return frameLayout
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 }

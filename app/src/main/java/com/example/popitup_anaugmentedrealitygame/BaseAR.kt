@@ -100,10 +100,13 @@ class BaseAR : AppCompatActivity() {
                     timerText.text = "$minutesPassed:$secondsPassed"
                 }
             }
-            if (balloonsLeft == 0) {
-                val intent = Intent(this, ResultScreen::class.java)
-                intent.putExtra("time", seconds.toString())
-                startActivity(intent)
+            runOnUiThread {
+                if (balloonsLeft == 0) {
+                    val intent = Intent(this, ResultScreen::class.java)
+                    intent.putExtra("time", seconds.toString())
+                    startActivity(intent)
+                    finish()
+                }
             }
         }.start()
 
