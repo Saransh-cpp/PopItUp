@@ -1,7 +1,7 @@
 package com.example.popitup_anaugmentedrealitygame
 
 import android.annotation.SuppressLint
-import android.graphics.Color
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.ar.sceneform.Camera
@@ -14,12 +14,7 @@ import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.rendering.ShapeFactory;
 import com.google.ar.sceneform.rendering.Texture;
 import android.graphics.Point;
-import android.media.AudioAttributes;
-import android.media.SoundPool;
-import android.net.Uri;
 import android.view.Display
-import com.google.ar.core.Anchor
-import com.google.ar.sceneform.AnchorNode
 import kotlinx.android.synthetic.main.activity_base_a_r.*
 import java.util.*
 
@@ -89,9 +84,8 @@ class BaseAR : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun startTimer() {
+        var seconds: Int = 0
         Thread {
-            var seconds: Int = 0
-
             while (balloonsLeft > 0) {
                 Thread.sleep(1000)
                 seconds++
@@ -102,7 +96,13 @@ class BaseAR : AppCompatActivity() {
                     timerText.text = "$minutesPassed:$secondsPassed"
                 }
             }
+            if (balloonsLeft == 0) {
+                val intent = Intent(this, ResultScreen::class.java)
+                intent.putExtra("time", seconds.toString())
+                startActivity(intent)
+            }
         }.start()
+
     }
 
     private fun buildBulletModel() {

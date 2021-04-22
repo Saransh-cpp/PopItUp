@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PopItUpAnAugmentedRealityGame">
+        <activity android:name=".ResultScreen"></activity>
         <activity
             android:name=".BaseAR"
             android:label="@string/title_activity_base_a_r" />
@@ -26,6 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
+
         <meta-data
             android:name="com.google.ar.core"
             android:value="required" />
