@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
+import android.widget.Toast
 import com.example.popitup_anaugmentedrealitygame.daos.UserDao
 import com.example.popitup_anaugmentedrealitygame.models.User
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -102,12 +103,20 @@ class GoogleSignIn : AppCompatActivity() {
     private fun updateUI(firebaseUser: FirebaseUser?) {
         if(firebaseUser != null) {
             val usersDao = UserDao()
-            var userFromFirebase: User
+            var highScore: User
+            var user: User
             GlobalScope.launch {
                 val currentUserId = firebaseUser.uid
-                userFromFirebase = usersDao.getUserById(currentUserId).await().toObject(User::class.java)!!
+                val userFromFirebase = usersDao.getUserById(currentUserId)?.await()
                 withContext(Dispatchers.Main) {
-                    val user = User(firebaseUser.uid, firebaseUser.displayName, firebaseUser.photoUrl.toString(), userFromFirebase.highScore)
+                    if (userFromFirebase != null) {
+                        highScore = usersDao.getUserById(currentUserId)!!.await().toObject(User::class.java)!!
+                        user = User(firebaseUser.uid, firebaseUser.displayName, firebaseUser.photoUrl.toString(), highScore.highScore)
+//                        Toast.makeText(this@GoogleSignIn, "User exists", Toast.LENGTH_LONG).show()
+                    } else {
+                        user = User(firebaseUser.uid, firebaseUser.displayName, firebaseUser.photoUrl.toString())
+//                        Toast.makeText(this@GoogleSignIn, "User does not exists", Toast.LENGTH_LONG).show()
+                    }
                     usersDao.addUser(user)
                 }
             }

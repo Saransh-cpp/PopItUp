@@ -25,14 +25,20 @@ class UserDao {
         }
     }
 
-    fun getUserById(uId: String): Task<DocumentSnapshot> {
-        return usersCollection.document(uId).get()
+    fun getUserById(uId: String): Task<DocumentSnapshot>? {
+        var success: Task<DocumentSnapshot>? = null
+        usersCollection.document(uId).get().addOnCompleteListener {
+            if (it.isSuccessful) {
+                success = usersCollection.document(uId).get()
+            }
+        }
+        return success
     }
 
     fun updateScore(highScore: Int) {
         GlobalScope.launch {
             val currentUserId = auth.currentUser!!.uid
-            val user = getUserById(currentUserId).await().toObject(User::class.java)!!
+            val user = getUserById(currentUserId)?.await()?.toObject(User::class.java)!!
 
             if (highScore < user.highScore) {
                 user.highScore = highScore
