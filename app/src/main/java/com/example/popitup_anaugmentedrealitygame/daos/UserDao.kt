@@ -14,7 +14,7 @@ import kotlinx.coroutines.tasks.await
 class UserDao {
 
     private val db = FirebaseFirestore.getInstance()
-    private val usersCollection = db.collection("users")
+    val usersCollection = db.collection("users")
     private val auth = Firebase.auth
 
     fun addUser(user: User?) {

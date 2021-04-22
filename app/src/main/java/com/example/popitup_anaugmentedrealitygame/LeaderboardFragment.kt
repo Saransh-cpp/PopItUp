@@ -6,6 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.popitup_anaugmentedrealitygame.daos.UserDao
+import com.example.popitup_anaugmentedrealitygame.models.User
+import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.fragment_leaderboard.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -38,13 +43,40 @@ class LeaderboardFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_leaderboard, container, false)
     }
+    private lateinit var userDao: UserDao
+    private lateinit var adapter: LeaderBoardAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         leaderBoardText.setOnClickListener {
             Toast.makeText(context, "Clicked", Toast.LENGTH_LONG).show()
         }
+
+        setUpRecyclerView()
     }
+
+    private fun setUpRecyclerView() {
+        userDao = UserDao()
+        val userCollection = userDao.usersCollection
+        val query = userCollection.orderBy("highScore", Query.Direction.ASCENDING)
+        val recyclerViewOptions = FirestoreRecyclerOptions.Builder<User>().setQuery(query, User::class.java).build()
+
+        adapter = LeaderBoardAdapter(recyclerViewOptions, this.activity)
+
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(this.activity)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        adapter.startListening()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        adapter.stopListening()
+    }
+
 
     companion object {
         /**
