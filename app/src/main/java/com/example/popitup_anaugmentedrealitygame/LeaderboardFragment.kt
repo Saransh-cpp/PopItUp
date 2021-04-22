@@ -58,7 +58,8 @@ class LeaderboardFragment : Fragment() {
     private fun setUpRecyclerView() {
         userDao = UserDao()
         val userCollection = userDao.usersCollection
-        val query = userCollection.orderBy("highScore", Query.Direction.ASCENDING)
+        var query = userCollection.whereLessThan("highScore", Int.MAX_VALUE)
+        query = query.orderBy("highScore", Query.Direction.ASCENDING)
         val recyclerViewOptions = FirestoreRecyclerOptions.Builder<User>().setQuery(query, User::class.java).build()
 
         adapter = LeaderBoardAdapter(recyclerViewOptions, this.activity)
