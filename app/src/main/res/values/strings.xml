@@ -17,4 +17,14 @@
     <string name="_0_0">0:0</string>
     <string name="shoot">SHOOT</string>
     <string name="_0_0_res">0:0</string>
+    <string name="enter_email">Enter email</string>
+    <string name="enter_password">Enter password</string>
+    <string name="login">LOGIN</string>
+    <string name="loginButtonText">Login</string>
+    <string name="register_now">Register Now</string>
+    <string name="register">Register</string>
+    <string name="login_now">Login now</string>
+    <string name="enter_username">Enter username</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="sign_out">Sign Out</string>
 </resources>

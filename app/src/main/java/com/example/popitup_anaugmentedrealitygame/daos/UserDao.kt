@@ -8,6 +8,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import com.example.popitup_anaugmentedrealitygame.models.User
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.Query
 import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.tasks.await
 
@@ -25,25 +26,7 @@ class UserDao {
         }
     }
 
-    fun getUserById(uId: String): Task<DocumentSnapshot>? {
-        var success: Task<DocumentSnapshot>? = null
-        usersCollection.document(uId).get().addOnCompleteListener {
-            if (it.isSuccessful) {
-                success = usersCollection.document(uId).get()
-            }
-        }
-        return success
-    }
-
-    fun updateScore(highScore: Int) {
-        GlobalScope.launch {
-            val currentUserId = auth.currentUser!!.uid
-            val user = getUserById(currentUserId)?.await()?.toObject(User::class.java)!!
-
-            if (highScore < user.highScore) {
-                user.highScore = highScore
-            }
-            usersCollection.document(currentUserId).set(user)
-        }
+    fun getUserById(uId: String): Task<DocumentSnapshot> {
+        return usersCollection.document(uId).get()
     }
 }

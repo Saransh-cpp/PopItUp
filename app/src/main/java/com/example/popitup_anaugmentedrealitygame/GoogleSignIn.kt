@@ -15,7 +15,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
@@ -102,25 +104,10 @@ class GoogleSignIn : AppCompatActivity() {
 
     private fun updateUI(firebaseUser: FirebaseUser?) {
         if(firebaseUser != null) {
-            val usersDao = UserDao()
-            var highScore: User
-            var user: User
-            GlobalScope.launch {
-                val currentUserId = firebaseUser.uid
-                val userFromFirebase = usersDao.getUserById(currentUserId)?.await()
-                withContext(Dispatchers.Main) {
-                    if (userFromFirebase != null) {
-                        highScore = usersDao.getUserById(currentUserId)!!.await().toObject(User::class.java)!!
-                        user = User(firebaseUser.uid, firebaseUser.displayName, firebaseUser.photoUrl.toString(), highScore.highScore)
-//                        Toast.makeText(this@GoogleSignIn, "User exists", Toast.LENGTH_LONG).show()
-                    } else {
-                        user = User(firebaseUser.uid, firebaseUser.displayName, firebaseUser.photoUrl.toString())
-//                        Toast.makeText(this@GoogleSignIn, "User does not exists", Toast.LENGTH_LONG).show()
-                    }
-                    usersDao.addUser(user)
-                }
-            }
 
+            val user = User(firebaseUser.uid, firebaseUser.displayName, firebaseUser.photoUrl.toString())
+            val usersDao = UserDao()
+            usersDao.addUser(user)
 
             val mainActivityIntent = Intent(this, MainActivity::class.java)
             startActivity(mainActivityIntent)

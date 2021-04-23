@@ -15,11 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PopItUpAnAugmentedRealityGame">
-        <activity android:name=".ResultScreen"></activity>
+        <activity android:name=".ResultScreen" />
         <activity
             android:name=".BaseAR"
             android:label="@string/title_activity_base_a_r" />
-        <activity android:name=".GoogleSignIn">
+        <activity android:name=".GoogleSignIn" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

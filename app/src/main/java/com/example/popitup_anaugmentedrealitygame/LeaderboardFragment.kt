@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.popitup_anaugmentedrealitygame.daos.ScoreDao
 import com.example.popitup_anaugmentedrealitygame.daos.UserDao
+import com.example.popitup_anaugmentedrealitygame.models.Score
 import com.example.popitup_anaugmentedrealitygame.models.User
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.Query
@@ -43,7 +45,7 @@ class LeaderboardFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_leaderboard, container, false)
     }
-    private lateinit var userDao: UserDao
+    private lateinit var scoreDao: ScoreDao
     private lateinit var adapter: LeaderBoardAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -56,11 +58,11 @@ class LeaderboardFragment : Fragment() {
     }
 
     private fun setUpRecyclerView() {
-        userDao = UserDao()
-        val userCollection = userDao.usersCollection
-        var query = userCollection.whereLessThan("highScore", Int.MAX_VALUE)
+        scoreDao = ScoreDao()
+        val scoreCollection = scoreDao.scoreCollection
+        var query = scoreCollection.whereLessThan("highScore", Int.MAX_VALUE)
         query = query.orderBy("highScore", Query.Direction.ASCENDING)
-        val recyclerViewOptions = FirestoreRecyclerOptions.Builder<User>().setQuery(query, User::class.java).build()
+        val recyclerViewOptions = FirestoreRecyclerOptions.Builder<Score>().setQuery(query, Score::class.java).build()
 
         adapter = LeaderBoardAdapter(recyclerViewOptions, this.activity)
 
