@@ -109,6 +109,8 @@ class GoogleSignIn : AppCompatActivity() {
             val usersDao = UserDao()
             usersDao.addUser(user)
 
+
+
             val mainActivityIntent = Intent(this, MainActivity::class.java)
             startActivity(mainActivityIntent)
             finish()
