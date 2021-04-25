@@ -53,6 +53,7 @@ class HomeFragment : Fragment() {
             FirebaseAuth.getInstance().signOut()
 
             startActivity(Intent(this.activity, GoogleSignIn::class.java))
+            activity?.finish()
         }
     }
 
