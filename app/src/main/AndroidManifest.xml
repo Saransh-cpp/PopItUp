@@ -19,7 +19,8 @@
         <activity
             android:name=".BaseAR"
             android:label="@string/title_activity_base_a_r" />
-        <activity android:name=".GoogleSignIn" >
+        <activity android:name=".GoogleSignIn"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

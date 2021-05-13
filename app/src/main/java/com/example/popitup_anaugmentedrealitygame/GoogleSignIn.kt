@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.example.popitup_anaugmentedrealitygame.daos.UserDao
 import com.example.popitup_anaugmentedrealitygame.models.User
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -40,6 +41,7 @@ class GoogleSignIn : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.statusBarColor = ContextCompat.getColor(this, R.color.myPurple)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_google_sign_in)
 
@@ -91,6 +93,8 @@ class GoogleSignIn : AppCompatActivity() {
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         signInButton.visibility = View.GONE
+        googleLogo.visibility = View.GONE
+        signInText.visibility = View.GONE
         progressBar.visibility = View.VISIBLE
         GlobalScope.launch(Dispatchers.IO) {
             val auth = auth.signInWithCredential(credential).await()
@@ -116,6 +120,8 @@ class GoogleSignIn : AppCompatActivity() {
             finish()
         } else {
             signInButton.visibility = View.VISIBLE
+            googleLogo.visibility = View.VISIBLE
+            signInText.visibility = View.VISIBLE
             progressBar.visibility = View.GONE
         }
     }
