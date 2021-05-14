@@ -13,7 +13,7 @@
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
-    <string name="balloons_left_20">Balloons Left: 20</string>
+    <string name="spheres_left_20">Spheres Left: 20</string>
     <string name="_0_0">0:0</string>
     <string name="shoot">SHOOT</string>
     <string name="_0_0_res">0:0</string>
