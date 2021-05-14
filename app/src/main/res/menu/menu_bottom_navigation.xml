@@ -8,4 +8,7 @@
         android:title="@string/leaderboard"
         android:icon="@drawable/ic_leaderboard"
         />
+    <item android:id="@+id/menu_about"
+        android:title="@string/about"
+        android:icon="@drawable/ic_baseline_library_books_24"/>
 </menu>

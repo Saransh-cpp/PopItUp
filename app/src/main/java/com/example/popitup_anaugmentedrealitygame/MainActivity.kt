@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         val homeFragment = HomeFragment()
         val leaderboardFragment = LeaderboardFragment()
+        val aboutFragment = AboutFragment()
 
         replaceFragment(homeFragment)
 
@@ -23,6 +24,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.menu_leaderboard -> {
                     replaceFragment(leaderboardFragment)
+                }
+                R.id.menu_about -> {
+                    replaceFragment(aboutFragment)
                 }
             }
             true
