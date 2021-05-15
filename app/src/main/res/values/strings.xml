@@ -30,4 +30,5 @@
     <string name="sign_in">Sign In</string>
     <string name="about">About</string>
     <string name="about_us">About us</string>
+    <string name="popitup">PopItUp</string>
 </resources>

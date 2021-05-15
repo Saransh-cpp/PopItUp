@@ -128,13 +128,19 @@ class BaseAR : AppCompatActivity() {
 
     private fun addBalloonsToScene() {
 
+        val green = arrayOf(154, 245, 156)
+        val blue = arrayOf(154, 245, 239)
+        val purple = arrayOf(204, 191, 255)
+        val pink = arrayOf(255, 184, 249)
+        val red = arrayOf(255, 184, 184)
+
+        val colours = arrayOf(green, blue, purple, pink, red)
+
         val random1 = Random()
 
-        val r = random1.nextInt(256)
-        val g = random1.nextInt(256)
-        val b = random1.nextInt(256)
+        val sphereColour = random1.nextInt(5)
 
-        val color: com.google.ar.sceneform.rendering.Color = com.google.ar.sceneform.rendering.Color(android.graphics.Color.rgb(r, g, b))
+        val color: com.google.ar.sceneform.rendering.Color = com.google.ar.sceneform.rendering.Color(android.graphics.Color.rgb(colours[sphereColour][0], colours[sphereColour][1], colours[sphereColour][2]))
 
         MaterialFactory.makeOpaqueWithColor(this, color).thenAccept {
             for (i in 0 until 20) {
