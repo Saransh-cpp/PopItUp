@@ -41,6 +41,9 @@ android {
 }
 
 dependencies {
+
+    implementation 'com.google.android.gms:play-services-ads:20.1.0'
+
     api project(":sceneformux")
     implementation 'com.google.ar:core:1.15.0'
 

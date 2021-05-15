@@ -12,6 +12,8 @@ import com.example.popitup_anaugmentedrealitygame.daos.UserDao
 import com.example.popitup_anaugmentedrealitygame.models.Score
 import com.example.popitup_anaugmentedrealitygame.models.User
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.google.firebase.firestore.Query
 import kotlinx.android.synthetic.main.fragment_leaderboard.*
 
@@ -50,9 +52,10 @@ class LeaderboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        leaderBoardText.setOnClickListener {
-            Toast.makeText(context, "Clicked", Toast.LENGTH_LONG).show()
-        }
+        MobileAds.initialize(this.activity!!.applicationContext) {}
+
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
 
         setUpRecyclerView()
     }
@@ -78,6 +81,21 @@ class LeaderboardFragment : Fragment() {
     override fun onStop() {
         super.onStop()
         adapter.stopListening()
+    }
+
+    override fun onPause() {
+        adView.pause()
+        super.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        adView.resume()
+    }
+
+    override fun onDestroyView() {
+        adView.destroy()
+        super.onDestroyView()
     }
 
 
