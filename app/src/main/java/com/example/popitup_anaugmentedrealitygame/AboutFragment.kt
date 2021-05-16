@@ -1,13 +1,17 @@
 package com.example.popitup_anaugmentedrealitygame
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.browser.customtabs.CustomTabsIntent
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
+import kotlinx.android.synthetic.main.fragment_about.*
 import kotlinx.android.synthetic.main.fragment_leaderboard.*
+import kotlinx.android.synthetic.main.fragment_leaderboard.adView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -44,6 +48,37 @@ class AboutFragment : Fragment() {
 
         val adRequest = AdRequest.Builder().build()
         adView.loadAd(adRequest)
+
+        val builder =  CustomTabsIntent.Builder()
+        val customTabsIntent = builder.build()
+
+        githubLink.setOnClickListener {
+            customTabsIntent.launchUrl(this.activity, Uri.parse("https://github.com/Saransh-cpp/PopItUp"))
+        }
+
+        name1.setOnClickListener {
+            customTabsIntent.launchUrl(this.activity, Uri.parse("https://github.com/Saransh-cpp"))
+        }
+
+        name2.setOnClickListener {
+            customTabsIntent.launchUrl(this.activity, Uri.parse("https://shreyabhoj.github.io/"))
+        }
+
+        name3.setOnClickListener {
+            customTabsIntent.launchUrl(this.activity, Uri.parse("https://www.linkedin.com/in/parth-tripathi-689506202/"))
+        }
+
+        name4.setOnClickListener {
+            customTabsIntent.launchUrl(this.activity, Uri.parse("https://www.linkedin.com/in/onkar-mahapatra-921106200/"))
+        }
+
+        name5.setOnClickListener {
+            customTabsIntent.launchUrl(this.activity, Uri.parse("https://www.instagram.com/anant._.saxena/"))
+        }
+
+        name6.setOnClickListener {
+            customTabsIntent.launchUrl(this.activity, Uri.parse("https://www.instagram.com/akshat_jain62/"))
+        }
     }
 
     override fun onPause() {
