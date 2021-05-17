@@ -33,21 +33,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.36"/>
+        app:layout_constraintGuide_percent="0.4"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineTop4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6"/>
+        app:layout_constraintGuide_percent="0.67"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineTop5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4"/>
+        app:layout_constraintGuide_percent="0.46"/>
 
 <!--    <androidx.constraintlayout.widget.Guideline-->
 <!--        android:id="@+id/guidelineTop6"-->
@@ -188,90 +188,90 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toRightOf="@id/guidelineLeft"
         app:layout_constraintRight_toLeftOf="@id/guidelineRight"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        android:paddingTop="10dp"
+        app:layout_constraintBottom_toTopOf="@id/adView"
+        android:paddingBottom="20dp"
         android:text="@string/github_repository"
         android:textColor="@color/myPurple"
         android:textStyle="bold"
         android:textSize="15sp" />
 
-    <TextView
-        android:id="@+id/name1"
-        android:layout_width="wrap_content"
-        android:paddingTop="10dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/name2"
-        app:layout_constraintTop_toBottomOf="@id/githubLink"
-        android:text="@string/saransh"
-        android:textColor="@color/myPurple"
-        android:textStyle="bold"
-        android:textSize="15sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/name1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:paddingTop="10dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toLeftOf="@id/name2"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/githubLink"-->
+<!--        android:text="@string/saransh"-->
+<!--        android:textColor="@color/myPurple"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="15sp" />-->
 
-    <TextView
-        android:id="@+id/name2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        app:layout_constraintLeft_toRightOf="@id/guidelineLeft"
-        app:layout_constraintRight_toLeftOf="@id/guidelineRight"
-        app:layout_constraintTop_toBottomOf="@id/githubLink"
-        android:text="@string/shreya"
-        android:textColor="@color/myPurple"
-        android:textStyle="bold"
-        android:textSize="15sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/name2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingTop="10dp"-->
+<!--        app:layout_constraintLeft_toRightOf="@id/guidelineLeft"-->
+<!--        app:layout_constraintRight_toLeftOf="@id/guidelineRight"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/githubLink"-->
+<!--        android:text="@string/shreya"-->
+<!--        android:textColor="@color/myPurple"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="15sp" />-->
 
-    <TextView
-        android:id="@+id/name3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        app:layout_constraintLeft_toRightOf="@id/name2"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/githubLink"
-        android:text="@string/parth"
-        android:textColor="@color/myPurple"
-        android:textStyle="bold"
-        android:textSize="15sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/name3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingTop="10dp"-->
+<!--        app:layout_constraintLeft_toRightOf="@id/name2"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/githubLink"-->
+<!--        android:text="@string/parth"-->
+<!--        android:textColor="@color/myPurple"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="15sp" />-->
 
-    <TextView
-        android:id="@+id/name4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/name5"
-        app:layout_constraintTop_toBottomOf="@id/name2"
-        android:text="@string/onkar"
-        android:textColor="@color/myPurple"
-        android:textStyle="bold"
-        android:textSize="15sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/name4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingTop="10dp"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toLeftOf="@id/name5"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/name2"-->
+<!--        android:text="@string/onkar"-->
+<!--        android:textColor="@color/myPurple"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="15sp" />-->
 
-    <TextView
-        android:id="@+id/name5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        app:layout_constraintLeft_toRightOf="@id/guidelineLeft"
-        app:layout_constraintRight_toLeftOf="@id/guidelineRight"
-        app:layout_constraintTop_toBottomOf="@id/name2"
-        android:text="@string/anant"
-        android:textColor="@color/myPurple"
-        android:textStyle="bold"
-        android:textSize="15sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/name5"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingTop="10dp"-->
+<!--        app:layout_constraintLeft_toRightOf="@id/guidelineLeft"-->
+<!--        app:layout_constraintRight_toLeftOf="@id/guidelineRight"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/name2"-->
+<!--        android:text="@string/anant"-->
+<!--        android:textColor="@color/myPurple"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="15sp" />-->
 
-    <TextView
-        android:id="@+id/name6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        app:layout_constraintLeft_toRightOf="@id/name5"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name2"
-        android:text="@string/akshat"
-        android:textColor="@color/myPurple"
-        android:textStyle="bold"
-        android:textSize="15sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/name6"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingTop="10dp"-->
+<!--        app:layout_constraintLeft_toRightOf="@id/name5"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/name2"-->
+<!--        android:text="@string/akshat"-->
+<!--        android:textColor="@color/myPurple"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="15sp" />-->
 
     <ImageView
         android:id="@+id/imageView"
