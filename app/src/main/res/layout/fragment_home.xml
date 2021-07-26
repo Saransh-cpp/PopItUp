@@ -14,34 +14,53 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.03"/>
+        app:layout_constraintGuide_percent="0.08"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineTop1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45"/>
+        app:layout_constraintGuide_percent="0.2"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7"/>
+        app:layout_constraintGuide_percent="0.75"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottom1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9"/>
+        app:layout_constraintGuide_percent="0.85"/>
 
-    <Button
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <ImageView
         android:id="@+id/arButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/arcore"
+        android:src="@drawable/ic_rectangle_16__1_"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottom"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottom1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/start_the_game"
+        android:textSize="20sp"
+        android:textColor="@color/black"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guidelineBottom"
@@ -61,25 +80,35 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/guidelineTop2"
         android:textAlignment="center"
-        android:text="@string/about_us_text1"
-        android:textSize="25sp"
+        android:text="@string/welcome_back"
+        android:textSize="45sp"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/guidelineTop3"
-        app:layout_constraintLeft_toRightOf="@id/guidelineLeft"
-        app:layout_constraintRight_toLeftOf="@id/guidelineRight" />
+        app:layout_constraintBottom_toTopOf="@id/guidelineTop1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTop" />
 
-
-    <Button
+    <ImageView
         android:id="@+id/sigOutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sign_out"
+        android:src="@drawable/ic_rectangle_16__1_"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/arButton"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottom1"
+        app:layout_constraintBottom_toTopOf="@id/guidelineBottom2"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/sign_out"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottom1"
+        app:layout_constraintBottom_toTopOf="@id/guidelineBottom2"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
