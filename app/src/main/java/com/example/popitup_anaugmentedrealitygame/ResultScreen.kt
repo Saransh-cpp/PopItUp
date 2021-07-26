@@ -45,7 +45,7 @@ class ResultScreen : AppCompatActivity() {
                         for (snapshot: DocumentSnapshot in snapshots) {
                             if (snapshot["createdBy.uid"] == currentUserId) {
                                 isFound = true
-                                Toast.makeText(this@ResultScreen, snapshot.id, Toast.LENGTH_LONG).show()
+//                                Toast.makeText(this@ResultScreen, snapshot.id, Toast.LENGTH_LONG).show()
                                 break
                             }
                         }
