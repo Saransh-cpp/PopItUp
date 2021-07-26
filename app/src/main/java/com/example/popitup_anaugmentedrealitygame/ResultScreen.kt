@@ -31,7 +31,7 @@ class ResultScreen : AppCompatActivity() {
         currentUserId = auth.currentUser!!.uid
 
         val scoreFinal: Int = intent.getStringExtra("time")!!.toInt()
-        resultText.text = "$scoreFinal seconds"
+        resultText.text = "$scoreFinal"
 
         var isFound: Boolean = false
         currentUserScoreId = ""
