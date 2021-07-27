@@ -32,3 +32,8 @@ https://user-images.githubusercontent.com/74055102/127104581-e7405b7f-a8cc-4920-
 
 ### Gameplay of the latest version
 
+
+https://user-images.githubusercontent.com/74055102/127147044-f6c4d53c-4ff6-489e-8c19-0cdad270973b.mp4
+
+
+
