@@ -1,5 +1,8 @@
 # PopItUp
 
-A native AR game.
+An Augmented Reality game, built with Google ARCore SDK and Google Sceneform SDK for Android.
 
-Some UI designing is pending which will be carried out soon, and this README will be updated after that:)
+The README will be updated with more information soon.
+
+![Google Pixel 4 Presentation](https://user-images.githubusercontent.com/74055102/127057273-f463bc09-7fad-4757-bacc-25c1b6876d2e.png)
+
