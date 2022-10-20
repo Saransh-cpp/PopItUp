@@ -221,58 +221,6 @@
 <!--        android:textStyle="bold"-->
 <!--        android:textSize="15sp" />-->
 
-<!--    <TextView-->
-<!--        android:id="@+id/name3"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:paddingTop="10dp"-->
-<!--        app:layout_constraintLeft_toRightOf="@id/name2"-->
-<!--        app:layout_constraintRight_toRightOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/githubLink"-->
-<!--        android:text="@string/parth"-->
-<!--        android:textColor="@color/myPurple"-->
-<!--        android:textStyle="bold"-->
-<!--        android:textSize="15sp" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/name4"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:paddingTop="10dp"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent"-->
-<!--        app:layout_constraintRight_toLeftOf="@id/name5"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/name2"-->
-<!--        android:text="@string/onkar"-->
-<!--        android:textColor="@color/myPurple"-->
-<!--        android:textStyle="bold"-->
-<!--        android:textSize="15sp" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/name5"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:paddingTop="10dp"-->
-<!--        app:layout_constraintLeft_toRightOf="@id/guidelineLeft"-->
-<!--        app:layout_constraintRight_toLeftOf="@id/guidelineRight"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/name2"-->
-<!--        android:text="@string/anant"-->
-<!--        android:textColor="@color/myPurple"-->
-<!--        android:textStyle="bold"-->
-<!--        android:textSize="15sp" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/name6"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:paddingTop="10dp"-->
-<!--        app:layout_constraintLeft_toRightOf="@id/name5"-->
-<!--        app:layout_constraintRight_toRightOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/name2"-->
-<!--        android:text="@string/akshat"-->
-<!--        android:textColor="@color/myPurple"-->
-<!--        android:textStyle="bold"-->
-<!--        android:textSize="15sp" />-->
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
