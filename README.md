@@ -22,7 +22,8 @@ An Augmented Reality game, built with Google ARCore SDK and Google Sceneform SDK
 
 ![Google Pixel 4 Presentation](https://user-images.githubusercontent.com/74055102/127057273-f463bc09-7fad-4757-bacc-25c1b6876d2e.png)
 
-![Google Pixel 4 Presentation 2](https://user-images.githubusercontent.com/74055102/127155359-8f1e1b55-34a7-4a95-9253-27de32db7f64.png)
+![Google Pixel 4 Presentation](https://user-images.githubusercontent.com/74055102/226313004-267198aa-8d72-4f64-a784-0ad0c8f771af.jpg)
+
 
 ## Gameplay
 
